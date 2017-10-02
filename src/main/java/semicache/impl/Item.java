@@ -19,4 +19,22 @@ public class Item implements CacheItem {
     public Object getValue() {
         return value;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Item item = (Item) o;
+
+        if (key != null ? !key.equals(item.key) : item.key != null) return false;
+        return value != null ? value.equals(item.value) : item.value == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = key != null ? key.hashCode() : 0;
+        result = 31 * result + (value != null ? value.hashCode() : 0);
+        return result;
+    }
 }
