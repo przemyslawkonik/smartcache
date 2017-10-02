@@ -1,6 +1,5 @@
 package semicache;
 
-
 import semicache.api.Cache;
 import semicache.impl.CacheImpl;
 import semicache.impl.Item;

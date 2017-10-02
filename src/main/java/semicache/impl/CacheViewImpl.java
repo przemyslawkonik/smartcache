@@ -5,9 +5,6 @@ import semicache.api.CacheView;
 
 import java.util.HashMap;
 
-/**
- * Created by Przemysław Konik on 2017-10-02.
- */
 public class CacheViewImpl implements CacheView {
 
     private HashMap<String, CacheItem> cache;
