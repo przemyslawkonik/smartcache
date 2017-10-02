@@ -10,17 +10,11 @@ public class CacheImpl implements Cache {
 
     private Map<String, CacheItem> cache;
     private CacheView cacheView;
+    private final int size;
 
     public CacheImpl(int size) {
-        final int maxSize = size;
-
-        cache = new LinkedHashMap<String, CacheItem>(size) {
-            @Override
-            protected boolean removeEldestEntry(Map.Entry<String, CacheItem> eldest) {
-                return size() > maxSize;
-            }
-        };
-
+        this.size = size;
+        initializeMap();
         cacheView = new CacheViewImpl(cache);
     }
 
@@ -35,5 +29,14 @@ public class CacheImpl implements Cache {
 
     public CacheView getView() {
         return cacheView;
+    }
+
+    private void initializeMap() {
+        cache = new LinkedHashMap<String, CacheItem>(size) {
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<String, CacheItem> eldest) {
+                return size() > size;
+            }
+        };
     }
 }
