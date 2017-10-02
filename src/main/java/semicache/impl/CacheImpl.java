@@ -8,7 +8,7 @@ import java.util.*;
 
 public class CacheImpl implements Cache {
 
-    private HashMap<String, CacheItem> cache;
+    private Map<String, CacheItem> cache;
     private CacheView cacheView;
 
     public CacheImpl(int size) {

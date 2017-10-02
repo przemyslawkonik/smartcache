@@ -3,13 +3,13 @@ package semicache.impl;
 import semicache.api.CacheItem;
 import semicache.api.CacheView;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class CacheViewImpl implements CacheView {
 
-    private HashMap<String, CacheItem> cache;
+    private Map<String, CacheItem> cache;
 
-    public CacheViewImpl(HashMap<String, CacheItem> cache) {
+    public CacheViewImpl(Map<String, CacheItem> cache) {
         this.cache = cache;
     }
 
